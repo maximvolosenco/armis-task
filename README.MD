@@ -28,3 +28,9 @@ Populate **api-key**, **crowdstrike-url** and **qualys-url**. Update mongo-conne
 ### Run project
 `python main.py`
 
+
+## Not Implemented Features
+
+- Host Merging: The functionality to merge multiple hosts is not currently implemented.
+- Time-based Host Definition: The ability to define hosts based on time parameters is not implemented.
+- Tests not implemented.

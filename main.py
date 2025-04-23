@@ -14,6 +14,7 @@ def run():
     qualys_client = QualysAsset()
     crowdstrike_client = CrowdstrikeAsset()
 
+    # Uncomment/ Comment Strategies as needed
     strategies = [
             IPAddressStrategy(),
             IdStrategy(),
@@ -24,8 +25,10 @@ def run():
             # NetworkInterfaceStrategy(),
         ]
     
-    
+    # Set batch size and threshold for deduplication for testing
     deduplicator = AssetDeduplicator(strategies, batch_size=3, threshold=0.8)
+
+
     repository = AssetRepository(deduplicator)
 
     qualys_deduplicated_assets = deduplicator.process_assets(qualys_client.iterate_normalized_hosts())
@@ -35,7 +38,6 @@ def run():
     repository.save_assets_with_deduplication(crowdstrike_deduplicated_assets)
 
     repository.print_statistics()
-
     logger.info("Asset deduplication process completed.")
 
 run()
