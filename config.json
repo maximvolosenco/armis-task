@@ -1,0 +1,8 @@
+{
+    "api-key": "",
+    "crowdstrike-url": "",
+    "qualys-url": "",
+    "mongo-connection-string": "mongodb://localhost:27017/",
+    "collection-name": "hosts",
+    "database-name": "maximvolosenco-taks"
+}
